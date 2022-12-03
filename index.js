@@ -20,7 +20,7 @@ app.get('/api/quiz', async (req, res) => {
         console.log("A request is being processed");
         const response = await openai.createCompletion({
             model: "text-davinci-003",
-            prompt: `Write the perfect home for a person that likes:\n\n${input}\nDetailed Sentence:`,
+            prompt: `Write the perfect home for a person that likes:\n\n${input}\nDetailed defcription:`,
             temperature: 0,
             max_tokens: 200,
             top_p: 1,
