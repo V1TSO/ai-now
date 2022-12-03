@@ -1,12 +1,15 @@
 const express = require('express');
+const cors = require('cors');
 const { Configuration, OpenAIApi } = require("openai");
+
+const app = express();
+app.use(cors());
 
 const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
-const app = express();
 
 app.get('/api/quiz', async (req, res) => {
     const { input } = req.query;
